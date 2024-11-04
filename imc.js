@@ -1,5 +1,5 @@
 function imc(){
-    const formulario = document.getElementsByName("formulário")[0]
+    const formulário = document.getElementsByName("formulário")[0]
     const formDados = new FormData(formulário)
     const paciente = {
         nome:formDados.get("nome"),
@@ -13,7 +13,7 @@ function imc(){
         calcularIMC(){
             if (this.altura > 3) this.altura=this.altura/100
             const imc = this.peso/this.altura**2;
-            if (imc < 18.5 ) this.classificacao = "obesidade mÃ³rbida";
+            if (imc < 18.5 ) this.classificacao = "obesidade morbida";
             if (imc >= 18.5 &&  imc < 25 ) this.classificacao = "saudável"
             if (imc >= 25 &&  imc < 30 ) this.classificacao = "sobrepeso"
             if (imc >= 30 &&  imc < 35 ) this.classificacao = "obesidade"
@@ -29,5 +29,5 @@ function imc(){
     console.log(paciente)
     console.log(paciente.calcularIMC())
     let resposta=document.getElementById('resposta');
-    resposta.innerHTML="Seu IMC Ã© "+paciente.calcularIMC()+". " + "Sua classificaÃ§Ã£o de peso Ã© " + paciente.classificacao;
+    resposta.innerHTML="Seu IMC "+paciente.calcularIMC()+". " + "Sua classificao de peso  " + paciente.classificacao;
 }
